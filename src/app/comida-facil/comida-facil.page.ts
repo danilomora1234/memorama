@@ -164,6 +164,7 @@ export class ComidaFacilPage implements OnInit {
         else{
           clearInterval(this.interTime);
           this.interTime=null;
+          console.log('GANASTE')
         }
       },1000);
     }, this.countDown*1000+200);

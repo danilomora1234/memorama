@@ -7,30 +7,58 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <ion-item color ="success"  routerLink="/modo-dificil-animales" routerDirection="forward">
-    <ion-label>
-      ANIMALES
-    </ion-label>
-  </ion-item>
-  <ion-item color ="danger"  routerLink="/comida-dificil" routerDirection="forward">
-    <ion-label>
-     COMIDA
-    </ion-label>
-  </ion-item>
-  <ion-item color ="medium"  routerLink="/hardware-dificil" routerDirection="forward">
-    <ion-label>
-      HARDWARE
-    </ion-label>
-  </ion-item>
-  <ion-item color ="warning"  routerLink="/medicina-dificil" routerDirection="forward">
-    <ion-label>
-      INSTRUMENTOS MEDICOS
-    </ion-label>
-  </ion-item>
-  <ion-item color="tertiary"  routerLink="/banderas-dificil" routerDirection="forward">
-    <ion-label>
-      BANDERAS DEL MUNDO
-    </ion-label>
-  </ion-item>
+<ion-content [fullscreen]="true">
+  <ion-col>
+      <div class="ion-text-center">
+          <h3>ELIGE UNA CATEGORIA</h3>
+      </div>
+  </ion-col>
+  <div align="center">
+      <ion-grid>
+          <ion-row>
+              <ion-col>
+                  <ion-button class="mio_boton" color="light" routerLink="/modo-dificil-animales" routerDirection="forward">
+                      <img src="assets/img/leon.png" class="mio_img" alt="">
+                      <ion-col></ion-col>ANIMALES
+                  </ion-button>
+              </ion-col>
+          </ion-row>
+
+          <ion-row>
+              <ion-col>
+                  <ion-button class="mio_boton" color="light" routerLink="/comida-dificil" routerDirection="forward">
+                      <img src="assets/img/comida-rapida.png" class="mio_img" alt="">
+                      <ion-col></ion-col>COMIDA
+                  </ion-button>
+              </ion-col>
+          </ion-row>
+
+          <ion-row>
+              <ion-col>
+                  <ion-button class="mio_boton" color="light" routerLink="/hardware-dificil" routerDirection="forward">
+                      <img src="assets/img/hardware.png" class="mio_img" alt="">
+                      <ion-col></ion-col>HADWARE
+                  </ion-button>
+              </ion-col>
+          </ion-row>
+
+          <ion-row>
+              <ion-col>
+                  <ion-button class="mio_boton" color="light" routerLink="/medicina-dificil" routerDirection="forward">
+                      <img src="assets/img/salud.png" class="mio_img" alt="">
+                      <ion-col></ion-col>MEDICINA
+                  </ion-button>
+              </ion-col>
+          </ion-row>
+
+          <ion-row>
+              <ion-col>
+                  <ion-button class="mio_boton" color="light" routerLink="/banderas-dificil" routerDirection="forward">
+                      <img src="assets/img/bandera.png" class="mio_img" alt="">
+                      <ion-col></ion-col>BANDERAS
+                  </ion-button>
+              </ion-col>
+          </ion-row>
+      </ion-grid>
+  </div>
 </ion-content>
