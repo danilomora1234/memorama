@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>  
+    </ion-buttons>
+    <ion-title>TABLERO 4X4 -- COMIDA</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <!-- Actual cards display -->
+
+  <ion-row align-items-center text-center size ="8" *ngIf="startGame && gameState == 'init'">
+
+    <ion-col align-self-center size ="3" *ngFor=" let c of cardsArray; let i =index">
+      <!-- SHOW CARD BACKGROUND -->
+      <img src="../assets/img/cards/incognita.png" *ngIf="c.pos != selectCard1pos &&
+      c.pos != selectCard2pos && c.val >-1" (click)="selectCard(c.pos, c.val,i)" style="width: 100px; height: 100px; 
+       ">
+      <!-- SHOW CARD 1 SELECTED -->
+      <img [src]="imageDir + images[c.val] + '.jpg'" *ngIf="c.pos == selectCard1pos && c.val >-1" 
+      style="width: 100px; height: 100px; 
+       ">
+      <!-- SHOW CARD 2 SELECTED -->
+      <img [src]="imageDir + images[c.val] + '.jpg'" *ngIf="c.pos == selectCard2pos && c.val >-1" 
+      style="width: 100px; height: 100px; 
+      ">
+       <!-- SHOW HIDDEN CARD -->
+       <img *ngIf="c.val == -1" style="width: 10px; height: 100px; 
+       visibility: hidden; ">
+    </ion-col>
+    <div>----------------------------------------------------------------------------------</div>
+   
+    <div   aling="center" *ngIf="startGame && gameState == 'init'">
+      <ion-chip color="success">
+        Puntos: <span style="color: rgb(81, 255, 0);font-size: 16px;">[{{userScore}}]</span>
+      </ion-chip>
+      <ion-chip color="primary">
+        Movimientos: <span style="color: rgb(0, 68, 255);font-size: 16px;">[{{movements}}]</span>
+      </ion-chip >
+      <ion-chip color="warning"><ion-icon name="alarm-outline"></ion-icon>
+        Tiempo:<span style="color: rgb(255, 238, 0);font-size: 16px;">|{{shownTime}}|</span>
+      </ion-chip>
+    </div>
+  </ion-row>
